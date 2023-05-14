@@ -1,0 +1,27 @@
+openAI:
+  clientId: client
+  clientSecret: secret
+
+zuul:
+  routes:
+    openAI:
+      path: /v1/chat/**
+      url: https://api.openai.com
+      stripPrefix: false
+
+security:
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:8080/api/v1/oauth2/simulator/token
+      userAuthorizationUri: http://localhost:8080/api/v1/oauth2/simulator/authorize
+      clientAuthenticationScheme: form
+      clientId: client
+      clientSecret: secret
+    resource:
+      preferTokenInfo: false
+      userInfoUri: http://localhost:8080/api/v1/oauth2/simulator/simulator/me
+      tokenInfoUri: http://localhost:8080/api/v1/oauth2/simulator/check_token
+
+logging:
+  level:
+    org.springframework.cloud.netflix.zuul: DEBUG
