@@ -6,7 +6,7 @@ zuul:
   routes:
     openAI:
       path: /v1/chat/**
-      url: https://api.openai.com
+      url: http://localhost:8080/api
       stripPrefix: false
 
 security:
