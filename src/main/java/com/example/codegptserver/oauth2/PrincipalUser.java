@@ -1,4 +1,4 @@
-package com.example.surveyserver.oauth2;
+package com.example.codegptserver.oauth2;
 
 
 public class PrincipalUser {

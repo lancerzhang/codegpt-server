@@ -1,4 +1,4 @@
-package com.example.surveyserver.oauth2;
+package com.example.codegptserver.oauth2;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

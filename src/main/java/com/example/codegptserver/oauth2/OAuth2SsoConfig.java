@@ -1,4 +1,4 @@
-package com.example.surveyserver.oauth2;
+package com.example.codegptserver.oauth2;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;

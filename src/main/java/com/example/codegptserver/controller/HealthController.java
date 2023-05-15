@@ -1,4 +1,4 @@
-package com.example.surveyserver.controller;
+package com.example.codegptserver.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

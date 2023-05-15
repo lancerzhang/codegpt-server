@@ -1,4 +1,4 @@
-package com.example.surveyserver.config;
+package com.example.codegptserver.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

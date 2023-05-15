@@ -1,4 +1,4 @@
-package com.example.surveyserver.config;
+package com.example.codegptserver.config;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
