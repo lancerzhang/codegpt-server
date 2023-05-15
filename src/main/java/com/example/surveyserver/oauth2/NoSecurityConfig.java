@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 @EnableWebSecurity
-@Profile("!development & !production")
+@Profile("!dev & !prod")
 public class NoSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override

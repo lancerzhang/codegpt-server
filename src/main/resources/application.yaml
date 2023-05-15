@@ -2,6 +2,8 @@ openAI:
   clientId: client
   clientSecret: secret
 
+authorizedRoles: ROLE_1,ROLE_2
+
 zuul:
   routes:
     openAI:

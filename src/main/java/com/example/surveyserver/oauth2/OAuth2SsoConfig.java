@@ -1,5 +1,6 @@
 package com.example.surveyserver.oauth2;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2SsoDefaultConfiguration;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.JwtAccessTokenConverterConfigurer;
@@ -15,8 +16,11 @@ import org.springframework.security.oauth2.provider.token.UserAuthenticationConv
 
 @Configuration
 @EnableOAuth2Sso
-@Profile({"development", "production"})
+@Profile({"dev", "prod"})
 public class OAuth2SsoConfig extends OAuth2SsoDefaultConfiguration {
+
+    @Value("${authorizedRoles}")
+    private String[] authorizedRoles;
 
     public OAuth2SsoConfig(ApplicationContext applicationContext) {
         super(applicationContext);
@@ -24,8 +28,11 @@ public class OAuth2SsoConfig extends OAuth2SsoDefaultConfiguration {
 
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
-        super.configure(http);
-        http.headers().frameOptions().disable();
+        http.authorizeRequests()
+                .antMatchers("/api/v1/.well-known/**").permitAll()
+                .antMatchers("/**").hasAnyRole(authorizedRoles)
+                .anyRequest().authenticated()
+                .and().formLogin().permitAll();
         http.csrf().disable();
         http.cors().disable();
     }
