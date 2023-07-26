@@ -30,6 +30,7 @@ public class OAuth2SsoConfig extends OAuth2SsoDefaultConfiguration {
     protected void configure(final HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/api/v1/.well-known/**").permitAll()
+                .antMatchers("/api/v1/config").permitAll()
                 .antMatchers("/**").hasAnyRole(authorizedRoles)
                 .anyRequest().authenticated()
                 .and().formLogin().permitAll();

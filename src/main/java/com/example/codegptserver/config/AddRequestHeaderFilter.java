@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AddRequestHeaderFilter extends ZuulFilter {
-    @Value("${openAI.clientId}")
+    @Value("${openai.clientId}")
     private String clientId;
 
-    @Value("${openAI.clientSecret}")
+    @Value("${openai.clientSecret}")
     private String clientSecret;
 
     @Override

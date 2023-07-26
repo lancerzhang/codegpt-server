@@ -1,6 +1,22 @@
-openAI:
+openai:
+  apiVersion: 2023-05-15
+  apiKey: YOUR_KEY
   clientId: client
   clientSecret: secret
+  models:
+    - name: gpt-35-turbo
+      contextLength: 4096
+      session:
+        chats: 10
+        tokens: 1300
+    - name: gpt-4
+      contextLength: 8192
+      session:
+        chats: 10
+        tokens: 2600
+      rateLimit:
+        minutes: 1
+        requests: 1
 
 authorizedRoles: ROLE_1,ROLE_2
 
