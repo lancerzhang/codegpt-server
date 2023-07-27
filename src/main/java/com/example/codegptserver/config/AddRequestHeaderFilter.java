@@ -31,7 +31,9 @@ public class AddRequestHeaderFilter extends ZuulFilter {
     public AddRequestHeaderFilter(OpenAIProperties openAIProperties) {
         this.openAIProperties = openAIProperties;
         for (Model model : openAIProperties.getModels()) {
-            buckets.put(model.getModel(), createNewBucket(model.getRateLimit()));
+            if (model.getRateLimit() != null) {
+                buckets.put(model.getModel(), createNewBucket(model.getRateLimit()));
+            }
         }
     }
 
