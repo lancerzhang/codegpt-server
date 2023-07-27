@@ -6,6 +6,8 @@ openai:
   models:
     - name: gpt-35-turbo
       contextLength: 4096
+      maxTokens:
+        completion: 1500
       session:
         chats: 10
         tokens: 1300

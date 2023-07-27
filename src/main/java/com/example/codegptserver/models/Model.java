@@ -7,6 +7,9 @@ public class Model {
     private int contextLength;
 
     @NestedConfigurationProperty
+    private MaxTokens maxTokens;
+
+    @NestedConfigurationProperty
     private Session session;
 
     @NestedConfigurationProperty
@@ -42,5 +45,13 @@ public class Model {
 
     public void setRateLimit(RateLimit rateLimit) {
         this.rateLimit = rateLimit;
+    }
+
+    public MaxTokens getMaxTokens() {
+        return maxTokens;
+    }
+
+    public void setMaxTokens(MaxTokens maxTokens) {
+        this.maxTokens = maxTokens;
     }
 }
