@@ -3,8 +3,9 @@ package com.example.codegptserver.models;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 public class Model {
-    private String name;
+    private String model;
     private int contextLength;
+    private String deployment;
 
     @NestedConfigurationProperty
     private MaxTokens maxTokens;
@@ -15,12 +16,12 @@ public class Model {
     @NestedConfigurationProperty
     private RateLimit rateLimit;
 
-    public String getName() {
-        return name;
+    public String getDeployment() {
+        return deployment;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDeployment(String deployment) {
+        this.deployment = deployment;
     }
 
     public int getContextLength() {
@@ -53,5 +54,13 @@ public class Model {
 
     public void setMaxTokens(MaxTokens maxTokens) {
         this.maxTokens = maxTokens;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 }

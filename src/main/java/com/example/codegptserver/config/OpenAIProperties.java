@@ -9,9 +9,6 @@ import java.util.List;
 public class OpenAIProperties {
 
     private String apiVersion;
-    private String apiKey;
-    private String clientId;
-    private String clientSecret;
     private List<Model> models;
 
     public String getApiVersion() {
@@ -20,30 +17,6 @@ public class OpenAIProperties {
 
     public void setApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
-    }
-
-    public String getApiKey() {
-        return apiKey;
-    }
-
-    public void setApiKey(String apiKey) {
-        this.apiKey = apiKey;
-    }
-
-    public String getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getClientSecret() {
-        return clientSecret;
-    }
-
-    public void setClientSecret(String clientSecret) {
-        this.clientSecret = clientSecret;
     }
 
     public List<Model> getModels() {

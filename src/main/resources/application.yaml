@@ -4,14 +4,15 @@ openai:
   clientId: client
   clientSecret: secret
   models:
-    - name: gpt-35-turbo
+    - model: gpt-35-turbo
       contextLength: 4096
+      deployment: gpt35turbo
       maxTokens:
         completion: 1500
       session:
         chats: 10
         tokens: 1300
-    - name: gpt-4
+    - model: gpt-4
       contextLength: 8192
       session:
         chats: 10
