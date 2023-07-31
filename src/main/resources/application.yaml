@@ -12,6 +12,9 @@ openai:
       session:
         chats: 10
         tokens: 1300
+      rateLimit:
+        minutes: 1
+        requests: 1
     - model: gpt-4
       contextLength: 8192
       session:
@@ -26,8 +29,8 @@ authorizedRoles: ROLE_1,ROLE_2
 zuul:
   routes:
     openAI:
-      path: /v1/chat/**
-      url: http://localhost:8080/api
+      path: /chat/**
+      url: http://localhost:3000
       stripPrefix: false
 
 security:
